@@ -1,0 +1,146 @@
+/*----------Detail Product  ------------*/
+.banner-details {
+    height: 280px;
+    background-image: url("/front-end/images/backgrond-p.jpg");
+    position: relative;
+    background-color: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.product-details {
+    padding: 0 30px 0 30px;
+}
+
+#title-page {
+    color: white;
+    position: relative;
+    top: 130px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 3px 3px black;
+}
+
+.change-img {
+    cursor: pointer;
+}
+
+.details-product-name, .details-product-price {
+    text-align: center;
+    font-weight: bold;
+}
+
+.details-product-price {
+    font-weight: bold;
+}
+
+.review {
+    text-align: center;
+}
+
+.product-status {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.rating-links {
+    font-size: 1.6rem;
+}
+
+.add-cart {
+    padding-top: 20px;
+}
+
+.quantity {
+    position: relative;
+    margin: 0 auto;
+    width: 170px;
+}
+
+.quantity input {
+    width: 170px;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 10px 0 0 0 !important;
+    height: 50px;
+    display: block;
+    float: left;
+    font-family: 'Roboto';
+    background-color: white;
+    border: 1px solid black;
+}
+
+#up {
+    display: block;
+    border: none;
+    height: 48px;
+    width: 40px;
+    text-align: center;
+    line-height: 48px;
+    font-size: 20px;
+    position: absolute;
+    top: 11px;
+    right: 1px;
+    color: #b2b2b2;
+    transition: all 0.5s ease;
+}
+
+#down {
+    border: none;
+    height: 48px;
+    width: 40px;
+    text-align: center;
+    display: block;
+    line-height: 48px;
+    font-size: 20px;
+    position: absolute;
+    top: 11px;
+    left: 1px;
+    color: #b2b2b2;
+    transition: all 0.5s ease;
+}
+
+#down:hover, #up:hover {
+    color: black;
+    transition: all 0.5s ease;
+}
+
+.addtoCard {
+    width: 170px;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 500;
+    height: 50px;
+    font-family: 'Roboto';
+    background-color: white;
+    border: 1px solid black;
+    transition: all 0.5s ease;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.addtoCard:hover {
+    background-color: black;
+    transition: all 0.5s ease;
+    color: white;
+}
+
+.card-header {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.cart-body {
+    padding: 16px;
+}
+
+.cart-body p span {
+    font-family: 'Roboto', serif;
+    font-size: 1.8rem;
+}
+
+.cart-body p {
+    font-size: 1.8rem;
+    font-family: 'Roboto', serif;
+}
