@@ -12,14 +12,14 @@
                         <div class="box">
                             <div class="box-title">Sort By</div>
                             <ul class="list-group">
-                                <li class="list-group-item {{$sorts == "default" && $orders == "default" ? "active": "" }}"><a href="{{route('necklaces.index')}}">DEFAULT</a></li>
-                                <li class="list-group-item {{$sorts == "name" && $orders == "asc" ? "active": "" }}"><a href="{{route('necklaces.sortPagination',['name','asc',$value])}}">Name ( A - Z )</a></li>
-                                <li class="list-group-item {{$sorts == "name" && $orders == "desc" ? "active": "" }}"><a href="{{route('necklaces.sortPagination',['name','desc',$value])}}">Name ( Z - A )</a></li>
-                                <li class="list-group-item {{$sorts == "price" && $orders == "asc" ? "active": "" }}"><a href="{{route('necklaces.sortPagination',['price','asc',$value])}}">PRICE ( LOW > HIGH )</a></li>
-                                <li class="list-group-item {{$sorts == "price" && $orders == "desc" ? "active": "" }}"><a href="{{route('necklaces.sortPagination',['price','desc',$value])}}">PRICE ( HIGH > LOW )</a></li>
-                                <li class="list-group-item {{$sorts == "view" && $orders == "asc" ? "active": "" }}"><a href="{{route('necklaces.sortPagination',['view','asc',$value])}}">RATING ( LOWEST )</a></li>
-                                <li class="list-group-item {{$sorts == "view" && $orders == "desc" ? "active": "" }}"><a href="{{route('necklaces.sortPagination',['view','desc',$value])}}">RATING ( HIGHEST )</a></li>
-                                <li class="list-group-item {{$sorts == "sold" && $orders == "asc" ? "active": "" }}"><a href="{{route('necklaces.sortPagination',['sold','desc',$value])}}">BEST SELLER</a></li>
+                                <li class="list-group-item {{$sorts == "default" && $orders == "default" ? "active": "" }}"><a href="{{route('rings.sortPagination',['default','default',$value])}}">DEFAULT</a></li>
+                                <li class="list-group-item {{$sorts == "name" && $orders == "asc" ? "active": "" }}"><a href="{{route('rings.sortPagination',['name','asc',$value])}}">Name ( A - Z )</a></li>
+                                <li class="list-group-item {{$sorts == "name" && $orders == "desc" ? "active": "" }}"><a href="{{route('rings.sortPagination',['name','desc',$value])}}">Name ( Z - A )</a></li>
+                                <li class="list-group-item {{$sorts == "price" && $orders == "asc" ? "active": "" }}"><a href="{{route('rings.sortPagination',['price','asc',$value])}}">PRICE ( LOW > HIGH )</a></li>
+                                <li class="list-group-item {{$sorts == "price" && $orders == "desc" ? "active": "" }}"><a href="{{route('rings.sortPagination',['price','desc',$value])}}">PRICE ( HIGH > LOW )</a></li>
+                                <li class="list-group-item {{$sorts == "view" && $orders == "asc" ? "active": "" }}"><a href="{{route('rings.sortPagination',['view','asc',$value])}}">RATING ( LOWEST )</a></li>
+                                <li class="list-group-item {{$sorts == "view" && $orders == "desc" ? "active": "" }}"><a href="{{route('rings.sortPagination',['view','desc',$value])}}">RATING ( HIGHEST )</a></li>
+                                <li class="list-group-item {{$sorts == "sold" && $orders == "asc" ? "active": "" }}"><a href="{{route('rings.sortPagination',['sold','desc',$value])}}">BEST SELLER</a></li>
                             </ul>
                         </div>
                     </div>
@@ -32,10 +32,10 @@
                                             SHOW
                                             <select name="category" id=""  onchange="location = this.value">
                                                 <option value="" hidden>6</option>
-                                                <option value="{{route('necklaces.sortPagination',[$sorts,$orders,3])}}" {{$value == 3 ? "selected": "" }}>3</option>
-                                                <option value="{{route('necklaces.sortPagination',[$sorts,$orders,6])}}" {{$value == 6 && $orders == "asc" ? "selected": "" }}>6</option>
-                                                <option value="{{route('necklaces.sortPagination',[$sorts,$orders,9])}}" {{$value == 9 && $orders == "desc" ? "selected": "" }}>9</option>
-                                                <option value="{{route('necklaces.sortPagination',[$sorts,$orders,30])}}" {{$value == 30 && $orders == "asc" ? "selected": "" }}>30</option>
+                                                <option value="{{route('rings.sortPagination',[$sorts,$orders,3])}}" {{$value == 3 ? "selected": "" }}>3</option>
+                                                <option value="{{route('rings.sortPagination',[$sorts,$orders,6])}}" {{$value == 6 && $orders == "asc" ? "selected": "" }}>6</option>
+                                                <option value="{{route('rings.sortPagination',[$sorts,$orders,9])}}" {{$value == 9 && $orders == "desc" ? "selected": "" }}>9</option>
+                                                <option value="{{route('rings.sortPagination',[$sorts,$orders,30])}}" {{$value == 30 && $orders == "asc" ? "selected": "" }}>30</option>
                                             </select>
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@
                                                             <div class="price">${{$product->price}}
                                                                 <span>{{$product->view}} Views</span>
                                                             </div>
-                                                              <a class="add-to-cart addCart" data-id="{{$product->id}}" href="javascript:void(0)">+ Add To Cart</a>
+                                                            <a class="add-to-cart addCart" data-id="{{$product->id}}" href="javascript:void(0)">+ Add To Cart</a>
                                                         </div>
                                                     </div>
                                                 </div>

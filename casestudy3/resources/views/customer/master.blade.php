@@ -72,7 +72,7 @@
                     <li><a href="{{route('home.index')}}">Home</a></li>
                     <li><a href="{{route('necklaces.index')}}">Necklaces</a></li>
                     <li><a href="">Earrings</a></li>
-                    <li><a href="">Rings</a></li>
+                    <li><a href="{{route('rings.index')}}">Rings</a></li>
                     <li><a href="">Bracelets & Bangles</a></li>
                     <li><a href="">About us</a></li>
                 </ul>
@@ -205,7 +205,7 @@
                     @foreach(session('cart')->items as $item)
                         <div class="row py-2">
                             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center">
-                                <a href="" target="_blank">
+                                <a href="{{route('home.detailProduct',$product->id)}}" target="_blank">
                                     <img width="100px" src="{{asset('images/'.$item['product']->images[0]->image)}}" alt="" title="">
                                 </a>
                             </div>

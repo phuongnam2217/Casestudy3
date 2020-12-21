@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="472f1921-46db-447c-b9a0-edf1f0424b17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../show_cart/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../show_cart/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../show_cart/app/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/../show_cart/app/Cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../show_cart/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../show_cart/app/Http/Controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../show_cart/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../show_cart/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../timezone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../timezone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../timezone/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../timezone/resources/views/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../timezone/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/../timezone/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../using_ajax/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../using_ajax/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../using_ajax/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../using_ajax/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../using_ajax/resources/views/book.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../using_ajax/resources/views/book.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../weather_app/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../weather_app/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NeckLacesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NeckLacesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front-end/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front-end/css/category.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front-end/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front-end/css/detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customer/categories/necklaces.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/categories/necklaces.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customer/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +156,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../task_manager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -207,6 +204,8 @@
       <workItem from="1608340759389" duration="36447000" />
       <workItem from="1608430907053" duration="27778000" />
       <workItem from="1608513225271" duration="29932000" />
+      <workItem from="1608557397480" duration="245000" />
+      <workItem from="1608557704377" duration="9494000" />
     </task>
     <servers />
   </component>

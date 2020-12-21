@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NeckLacesController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RingsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,13 @@ Route::get('/{id}/product',[HomeController::class,'detailProduct'])->name('home.
 Route::prefix('necklaces')->group(function (){
     Route::get('/',[NeckLacesController::class,'index'])->name('necklaces.index');
     Route::get('/sort/{sort}/{order}',[NeckLacesController::class,'sort'])->name('necklaces.sort');
+    Route::get('/sort/{sort}/{order}/{value?}',[NeckLacesController::class,'sortPagination'])->name('necklaces.sortPagination');
+});
+//Rings
+Route::prefix('rings')->group(function (){
+    Route::get('/',[RingsController::class,'index'])->name('rings.index');
+//    Route::get('/sort/{sort}/{order}',[RingsController::class,'sort'])->name('rings.sort');
+    Route::get('/sort/{sort}/{order}/{value?}',[RingsController::class,'sortPagination'])->name('rings.sortPagination');
 });
 
 Route::prefix('cart')->group(function (){
@@ -36,7 +44,6 @@ Route::prefix('cart')->group(function (){
     Route::post('/{id}/add',[CartController::class,'addMany'])->name('cart.addMany');
     Route::get('/{id}/decrease',[CartController::class,'decrease'])->name('cart.decrease');
     Route::get('/{id}/remove',[CartController::class,'delete'])->name('cart.delete');
-
 });
 
 Route::get('login',[AuthController::class,'showFormLogin'])->name('login');

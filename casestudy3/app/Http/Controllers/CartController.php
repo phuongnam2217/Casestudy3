@@ -34,7 +34,7 @@ class CartController extends Controller
         $success = "Add ". $product->name ."To Card Successfully";
         $qty = session('cart')->totalQty;
         $totalPrice = session('cart')->totalPrice;
-        $output = $this->output($newCart);
+        $output = $this->output($newCart,$product);
         return response()->json(['qty'=>$qty,'success'=>$success,'cart'=>$output,'total'=>$totalPrice]);
     }
     public function addMany($idProduct,Request $request)
@@ -48,7 +48,7 @@ class CartController extends Controller
         Session::flash('success',"Add Product To Card Successfully");
         $success = "Add ". $product->name ."To Card Successfully";
         $qty = session('cart')->totalQty;
-        $output = $this->output($newCart);
+        $output = $this->output($newCart,$product);
         $totalPrice = session('cart')->totalPrice;
         return response()->json(['qty'=>$qty,'success'=>$success,'cart'=>$output,'total'=>$totalPrice]);
     }
@@ -64,7 +64,7 @@ class CartController extends Controller
             $success = "Remove ". $product->name ."To Card Successfully";
             $qty = session('cart')->totalQty;
             $totalPrice = session('cart')->totalPrice;
-            $output = $this->output($newCart);
+            $output = $this->output($newCart,$product);
             return response()->json(['qty'=>$qty,'success'=>$success,'cart'=>$output,'total'=>$totalPrice]);
         }else{
             session()->forget('cart');
@@ -88,7 +88,7 @@ class CartController extends Controller
             $success = "Decrease ". $product->name ."To Card Successfully";
             $qty = session('cart')->totalQty;
             $totalPrice = session('cart')->totalPrice;
-            $output = $this->output($newCart);
+            $output = $this->output($newCart,$product);
             return response()->json(['qty'=>$qty,'success'=>$success,'cart'=>$output,'total'=>$totalPrice]);
         }else{
             session()->forget('cart');
@@ -132,13 +132,13 @@ class CartController extends Controller
         session()->forget('cart');
         return back();
     }
-    function output($newCart)
+    function output($newCart,$product)
     {
         $output = "";
         foreach ($newCart as $item){
             $output .= '<div class="row py-2">';
             $output .= '<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center">';
-            $output .= '<a href="" target="_blank">';
+            $output .= '<a href="'.route('home.detailProduct',$product->id).'" target="_blank">';
             $output .= '<img width="100px" src="'.asset('images/'.$item['product']->images[0]->image).'" alt="" title="">';
             $output .= '</a>';
             $output .= '</div>';
