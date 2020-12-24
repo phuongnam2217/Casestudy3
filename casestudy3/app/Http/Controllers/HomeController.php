@@ -29,4 +29,17 @@ class HomeController extends Controller
         $product->save();
         return view('customer.products.detail',compact('product'));
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $products = Product::where('name','LIKE',"%$search%")->get();
+        if($search == null)
+        {
+            $products = null;
+        }
+
+        return view('customer.products.search',compact('products'));
+    }
+
 }

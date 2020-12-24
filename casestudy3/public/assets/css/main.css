@@ -24021,3 +24021,7 @@ a.fc-more:hover {
     margin-bottom: 30px;
     background-size: 100%
 }
+.table.dataTable tbody th, table.dataTable tbody td{
+    padding: 4px 8px;
+    text-align: center;
+}

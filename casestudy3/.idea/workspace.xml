@@ -2,12 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="472f1921-46db-447c-b9a0-edf1f0424b17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/casestudy3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/casestudy3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NeckLacesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NeckLacesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RingsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Services/ProductService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Services/ProductService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/fonts/Pe-icon-7-stroke.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/fonts/Pe-icon-7-stroke.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/fonts/Pe-icon-7-stroke.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/fonts/Pe-icon-7-stroke.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/fonts/fa-solid-900.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/fonts/fa-solid-900.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/fonts/fa-solid-900.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/fonts/fa-solid-900.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/fonts/fa-solid-900.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/avatars/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/avatars/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/avatars/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/avatars/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/avatars/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/avatars/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/avatars/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/avatars/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/avatars/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/avatars/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/logo-inverse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/assets/scripts/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/charts-chartjs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-accordions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-calendar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-carousel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-maps.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-modals.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-notifications.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-progress-bar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-scrollable-elements.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-tabs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/components-tooltips-popovers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/dashboard-boxes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/elements-badges-labels.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/elements-buttons-standard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/elements-cards.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/elements-dropdowns.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/elements-icons.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/elements-list-group.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/elements-navigation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/elements-utilities.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/forms-controls.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/forms-layouts.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/forms-validation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/architectui-html-free/tables-regular.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/front-end/css/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front-end/css/category.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/front-end/css/detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front-end/css/detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front-end/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/front-end/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/front-end/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/front-end/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/core/menu-left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/core/menu-left.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/products/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/customer/categories/necklaces.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/categories/necklaces.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/customer/categories/rings.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/categories/rings.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/customer/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/customer/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -142,6 +208,11 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
     </include_path>
   </component>
   <component name="ProjectId" id="1lV8MCor2PxVRlo2VvtqEo7b1Zt" />
@@ -156,7 +227,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/baitap/task_manager" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -206,6 +277,12 @@
       <workItem from="1608513225271" duration="29932000" />
       <workItem from="1608557397480" duration="245000" />
       <workItem from="1608557704377" duration="9494000" />
+      <workItem from="1608607524869" duration="32666000" />
+      <workItem from="1608686376029" duration="1590000" />
+      <workItem from="1608688727671" duration="89000" />
+      <workItem from="1608705473507" duration="9520000" />
+      <workItem from="1608728778810" duration="6747000" />
+      <workItem from="1608772791365" duration="3672000" />
     </task>
     <servers />
   </component>

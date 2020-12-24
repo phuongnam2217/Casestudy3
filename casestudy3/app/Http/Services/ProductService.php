@@ -5,6 +5,7 @@ namespace App\Http\Services;
 
 
 use App\Http\Repositories\ProductRepository;
+use App\Models\StatusConstant;
 
 class ProductService implements ServiceInterface
 {
@@ -48,5 +49,16 @@ class ProductService implements ServiceInterface
     public function delete($obj)
     {
         $this->productRepository->delete($obj);
+    }
+    public function changeStatus($obj)
+    {
+        if($obj->status == StatusConstant::ACTIVE)
+        {
+            $obj->status = StatusConstant::DISABLE;
+            $this->productRepository->save($obj);
+        }else{
+            $obj->status = StatusConstant::ACTIVE;
+            $this->productRepository->save($obj);
+        }
     }
 }

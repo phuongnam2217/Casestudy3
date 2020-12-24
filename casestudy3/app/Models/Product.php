@@ -38,4 +38,9 @@ class Product extends Model
     {
         return $this->belongsTo(Plating::class);
     }
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class,'order_details','product_id','order_id')->withPivot(['quantity','priceEach','total']);
+    }
 }

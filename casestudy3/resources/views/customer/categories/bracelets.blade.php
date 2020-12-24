@@ -1,5 +1,5 @@
 @extends('customer.master')
-@section('title',"Auroses Rings")
+@section('title',"Auroses Bracelets & Bangles")
 @section('content')
     <div class="menu">
         <div class="banner-details">
@@ -13,29 +13,29 @@
                             <div class="box-title">Sort By</div>
                             <ul class="list-group">
                                 <li class="list-group-item {{$sorts == "default" && $orders == "default" ? "active": "" }}">
-                                    <a href="{{route('rings.sortPagination',['default','default',$value])}}">DEFAULT</a>
+                                    <a href="{{route('bracelets-bangles.sortPagination',['default','default',$value])}}">DEFAULT</a>
                                 </li>
                                 <li class="list-group-item {{$sorts == "name" && $orders == "asc" ? "active": "" }}"><a
-                                        href="{{route('rings.sortPagination',['name','asc',$value])}}">Name ( A - Z
-                                        )</a></li>
+                                        href="{{route('bracelets-bangles.sortPagination',['name','asc',$value])}}">Name
+                                        ( A - Z )</a></li>
                                 <li class="list-group-item {{$sorts == "name" && $orders == "desc" ? "active": "" }}"><a
-                                        href="{{route('rings.sortPagination',['name','desc',$value])}}">Name ( Z - A
-                                        )</a></li>
+                                        href="{{route('bracelets-bangles.sortPagination',['name','desc',$value])}}">Name
+                                        ( Z - A )</a></li>
                                 <li class="list-group-item {{$sorts == "price" && $orders == "asc" ? "active": "" }}"><a
-                                        href="{{route('rings.sortPagination',['price','asc',$value])}}">PRICE ( LOW >
-                                        HIGH )</a></li>
+                                        href="{{route('bracelets-bangles.sortPagination',['price','asc',$value])}}">PRICE
+                                        ( LOW > HIGH )</a></li>
                                 <li class="list-group-item {{$sorts == "price" && $orders == "desc" ? "active": "" }}">
-                                    <a href="{{route('rings.sortPagination',['price','desc',$value])}}">PRICE ( HIGH >
-                                        LOW )</a></li>
+                                    <a href="{{route('bracelets-bangles.sortPagination',['price','desc',$value])}}">PRICE
+                                        ( HIGH > LOW )</a></li>
                                 <li class="list-group-item {{$sorts == "view" && $orders == "asc" ? "active": "" }}"><a
-                                        href="{{route('rings.sortPagination',['view','asc',$value])}}">RATING ( LOWEST
-                                        )</a></li>
+                                        href="{{route('bracelets-bangles.sortPagination',['view','asc',$value])}}">RATING
+                                        ( LOWEST )</a></li>
                                 <li class="list-group-item {{$sorts == "view" && $orders == "desc" ? "active": "" }}"><a
-                                        href="{{route('rings.sortPagination',['view','desc',$value])}}">RATING ( HIGHEST
-                                        )</a></li>
+                                        href="{{route('bracelets-bangles.sortPagination',['view','desc',$value])}}">RATING
+                                        ( HIGHEST )</a></li>
                                 <li class="list-group-item {{$sorts == "sold" && $orders == "desc" ? "active": "" }}"><a
-                                        href="{{route('rings.sortPagination',['sold','desc',$value])}}">BEST SELLER</a>
-                                </li>
+                                        href="{{route('bracelets-bangles.sortPagination',['sold','desc',$value])}}">BEST
+                                        SELLER</a></li>
                             </ul>
                         </div>
                     </div>
@@ -50,35 +50,35 @@
                                                 <select name="category" id="" onchange="location = this.value">
                                                     <option value="" hidden>DEFAULT</option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',['default','default',$value])}}">
+                                                        value="{{route('bracelets-bangles.sortPagination',['default','default',$value])}}">
                                                         DEFAULT
                                                     </option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',['name','asc',$value])}}" {{$sorts == "name" && $orders == "asc" ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',['name','asc',$value])}}" {{$sorts == "name" && $orders == "asc" ? "selected": "" }}>
                                                         NAME (A - Z)
                                                     </option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',['name','desc',$value])}}" {{$sorts == "name" && $orders == "desc" ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',['name','desc',$value])}}" {{$sorts == "name" && $orders == "desc" ? "selected": "" }}>
                                                         NAME (Z - A)
                                                     </option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',['price','asc',$value])}}" {{$sorts == "price" && $orders == "asc" ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',['price','asc',$value])}}" {{$sorts == "price" && $orders == "asc" ? "selected": "" }}>
                                                         PRICE (LOW > HIGH)
                                                     </option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',['price','desc',$value])}}" {{$sorts == "price" && $orders == "desc" ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',['price','desc',$value])}}" {{$sorts == "price" && $orders == "desc" ? "selected": "" }}>
                                                         PRICE (HIGH > LOW)
                                                     </option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',['view','asc',$value])}}" {{$sorts == "view" && $orders == "asc" ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',['view','asc',$value])}}" {{$sorts == "view" && $orders == "asc" ? "selected": "" }}>
                                                         RATING (LOWEST)
                                                     </option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',['view','desc',$value])}}" {{$sorts == "view" && $orders == "desc" ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',['view','desc',$value])}}" {{$sorts == "view" && $orders == "desc" ? "selected": "" }}>
                                                         RATING (HIGHEST)
                                                     </option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',['sold','desc',$value])}}" {{$sorts == "sold" && $orders == "desc" ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',['sold','desc',$value])}}" {{$sorts == "sold" && $orders == "desc" ? "selected": "" }}>
                                                         BEST SELLER
                                                     </option>
                                                 </select>
@@ -88,19 +88,19 @@
                                                 <select name="category" id="" onchange="location = this.value">
                                                     <option value="" hidden>6</option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',[$sorts,$orders,3])}}" {{$value == 3 ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',[$sorts,$orders,3])}}" {{$value == 3 ? "selected": "" }}>
                                                         3
                                                     </option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',[$sorts,$orders,6])}}" {{$value == 6 && $orders == "asc" ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',[$sorts,$orders,6])}}" {{$value == 6 && $orders == "asc" ? "selected": "" }}>
                                                         6
                                                     </option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',[$sorts,$orders,9])}}" {{$value == 9 && $orders == "desc" ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',[$sorts,$orders,9])}}" {{$value == 9 && $orders == "desc" ? "selected": "" }}>
                                                         9
                                                     </option>
                                                     <option
-                                                        value="{{route('rings.sortPagination',[$sorts,$orders,30])}}" {{$value == 30 && $orders == "asc" ? "selected": "" }}>
+                                                        value="{{route('bracelets-bangles.sortPagination',[$sorts,$orders,30])}}" {{$value == 30 && $orders == "asc" ? "selected": "" }}>
                                                         30
                                                     </option>
                                                 </select>

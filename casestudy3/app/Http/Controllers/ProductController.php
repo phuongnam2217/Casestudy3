@@ -79,11 +79,19 @@ class ProductController extends Controller
         return back()->with('success','Delete Product Successfully');
     }
 
+    public function changeStatus($id)
+    {
+        $product = $this->productService->findById($id);
+        $this->productService->changeStatus($product);
+        return back()->with('Change status successfully');
+    }
+
     public function image($id)
     {
         $product = $this->productService->findById($id);
         return view('admin.products.upload',compact('product'));
     }
+
     public function upload(Request $request,$id)
     {
         $image = new Image();
@@ -111,4 +119,5 @@ class ProductController extends Controller
         }
         return response()->json($output);
     }
+
 }

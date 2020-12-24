@@ -46,7 +46,6 @@
                     <a href="{{route('users.index')}}">
                         <i class="metismenu-icon pe-7s-users"></i>
                         Manage Users
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                 </li>
                 <li>
@@ -76,48 +75,28 @@
                         </li>
                     </ul>
                 </li>
-                <li class="app-sidebar__heading">Widgets</li>
                 <li>
-                    <a href="dashboard-boxes.html">
-                        <i class="metismenu-icon pe-7s-display2"></i>
-                        Dashboard Boxes
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-diamond"></i>
+                        Manage Order
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
+                    <ul>
+                        <li>
+                            <a href="{{route('orders.index',1)}}">
+                                <i class="metismenu-icon"></i>
+                                Orders Waiting
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('orders.index',2)}}">
+                                <i class="metismenu-icon">
+                                </i>Orders Confirmed
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                <li class="app-sidebar__heading">Forms</li>
-                <li>
-                    <a href="forms-controls.html">
-                        <i class="metismenu-icon pe-7s-mouse">
-                        </i>Forms Controls
-                    </a>
-                </li>
-                <li>
-                    <a href="forms-layouts.html">
-                        <i class="metismenu-icon pe-7s-eyedropper">
-                        </i>Forms Layouts
-                    </a>
-                </li>
-                <li>
-                    <a href="forms-validation.html">
-                        <i class="metismenu-icon pe-7s-pendrive">
-                        </i>Forms Validation
-                    </a>
-                </li>
-                <li class="app-sidebar__heading">Charts</li>
-                <li>
-                    <a href="charts-chartjs.html">
-                        <i class="metismenu-icon pe-7s-graph2">
-                        </i>ChartJS
-                    </a>
-                </li>
-                <li class="app-sidebar__heading">PRO Version</li>
-                <li>
-                    <a href="https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/"
-                       target="_blank">
-                        <i class="metismenu-icon pe-7s-graph2">
-                        </i>
-                        Upgrade to PRO
-                    </a>
-                </li>
+
             </ul>
         </div>
     </div>

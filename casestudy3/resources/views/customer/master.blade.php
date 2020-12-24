@@ -36,9 +36,9 @@
                             <div class="burger">
                                 <i class="fas fa-bars"></i>
                             </div>
-                            <div class="header-login">
-                                <i class="fas fa-user"></i>
-                            </div>
+                            {{--                            <div class="header-login">--}}
+                            {{--                                <i class="fas fa-user"></i>--}}
+                            {{--                            </div>--}}
                         </div>
                     </div>
                     <div class="col-3">
@@ -52,10 +52,7 @@
                     </div>
                     <div class="col-3">
                         <div class="d-flex justify-content-around">
-                            <div class="header-search ">
-                                <i class="fas fa-search"></i>
-                            </div>
-                            <div class="header-cart" >
+                            <div class="header-cart">
                                 <a href="javascript:void(0)" class="cart-link d-block">
                                     <div class="cart-icon">
                                         <i class="fas fa-shopping-cart"></i>
@@ -65,16 +62,27 @@
                                 </span>
                                 </a>
                             </div>
+                            <div class="header-search">
+                                <div class="search-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="form-search">
+                                    <form action="{{route('home.search')}}" method="POST">
+                                        @csrf
+                                        <input type="search" name="search" class="form-control search-input" placeholder="Search">
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <ul class="sub">
                     <li><a href="{{route('home.index')}}">Home</a></li>
                     <li><a href="{{route('necklaces.index')}}">Necklaces</a></li>
-                    <li><a href="">Earrings</a></li>
+                    <li><a href="{{route('earrings.index')}}">Earrings</a></li>
                     <li><a href="{{route('rings.index')}}">Rings</a></li>
-                    <li><a href="">Bracelets & Bangles</a></li>
-                    <li><a href="">About us</a></li>
+                    <li><a href="{{route('bracelets-bangles.index')}}">Bracelets & Bangles</a></li>
+                    <li><a href="#footer">About us</a></li>
                 </ul>
             </div>
         </nav>
@@ -84,7 +92,7 @@
             @yield('content')
         </div>
     </div>
-    <div class="footer mt-5 container-fluid">
+    <div id="footer" class="footer mt-5 container-fluid">
         <div class="footer-logo pt-3 d-flex justify-content-center">
             <img width="280px" src="{{asset('front-end/images/logowhite.png')}}" alt="">
         </div>
@@ -189,73 +197,83 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel" style="display: none;" aria-hidden="true">
+<div class="modal fade" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel"0
+     style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
         <div class="modal-content">
             <div class="modal-header">
+                <button type="button" class="btn-close my-btn" data-bs-dismiss="modal" aria-label="Close">
+                </button>
                 <h5 class="modal-title h3" id="exampleModalFullscreenLabel">your cart
                     <span id="CartQty" style="">
                          {{session('cart') ? session('cart')->totalQty : 0}}
                     </span>
                 </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 @if(session('cart'))
-                    @foreach(session('cart')->items as $item)
-                        <div class="row py-2">
-                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 d-flex justify-content-center">
-                                <a href="{{route('home.detailProduct',$product->id)}}" target="_blank">
-                                    <img width="100px" src="{{asset('images/'.$item['product']->images[0]->image)}}" alt="" title="">
-                                </a>
-                            </div>
-                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <p class="cart-product-name">
-                                        {{$item['product']->name}}
-                                    </p>
-                                    <a href="javascript:void(0)" data-id="{{$item['product']->id}}" class="remove-product">
+                    <div class="list">
+                        @foreach(session('cart')->items as $item)
+                            <div class="row py-2">
+                                <div class="col-4 d-flex justify-content-center">
+                                    <a href="{{route('home.detailProduct',$item['product']->id)}}" target="_blank">
+                                        <img width="100px" src="{{asset('images/'.$item['product']->images[0]->image)}}"
+                                             alt="" title="">
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <div class="d-flex justify-content-between">
+                                        <p class="cart-product-name">
+                                            {{$item['product']->name}}
+                                        </p>
+                                        <a href="javascript:void(0)" data-id="{{$item['product']->id}}"
+                                           class="remove-product">
                                             <span class="">
                                             <i class="fas fa-trash"></i>
                                         </span>
-                                    </a>
-                                </div>
-                                <div class="row" style="display:inline-block;">
-                                    <div class="col-12 d-flex align-items-center mt-3">
-                                        <p class="cart-product-price">{{$item['product']->price}} $</p>
-                                        <div class="input-group cartedit">
-                                            <div class="d-flex justify-content-center">
-                                                <div class="quantity-input">
-                                                    <input id="quantityBtn" type="text" value="{{$item['totalQty']}}">
-                                                    <a href="javascript:void(0)" data-id="{{$item['product']->id}}" class="descrease-product" >-</a>
-                                                    <a href="javascript:void(0)" data-id="{{$item['product']->id}}" class="add-product" >+</a>
+                                        </a>
+                                    </div>
+                                    <div class="row" style="display:inline-block;">
+                                        <div class="col-12 d-flex align-items-center">
+                                            <p class="cart-product-price">{{$item['product']->price}} $</p>
+                                            <div class="input-group cartedit">
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="quantity-input">
+                                                        <input id="quantityBtn" type="text"
+                                                               value="{{$item['totalQty']}}">
+                                                        <a href="javascript:void(0)" data-id="{{$item['product']->id}}"
+                                                           class="descrease-product">-</a>
+                                                        <a href="javascript:void(0)" data-id="{{$item['product']->id}}"
+                                                           class="add-product">+</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        @endforeach
+                    </div>
+                    <div class="">
+                        <div class="total">
+                            <div class="total-title">
+                                Total
+                            </div>
+                            <div class="total-price">
+                                {{session('cart') ? session('cart')->totalPrice : "0" }} $
+                            </div>
                         </div>
-                    @endforeach
+                        <div class="modal-checkout d-flex justify-content-center align-items-center py-3">
+                            <a href="{{route('checkout.index')}}" class="btnCheckout">GO TO CHECK OUT</a>
+                        </div>
+                    </div>
                 @else
                     <div class="cart-empty">
                         Your shopping cart is empty!
                     </div>
                 @endif
             </div>
-            <div class="">
-                <div class="total">
-                    <div class="total-title">
-                        Total
-                    </div>
-                    <div class="total-price">
-                        {{session('cart') ? session('cart')->totalPrice : "0" }} $
-                    </div>
-                </div>
-                <div class="modal-checkout d-flex justify-content-center align-items-center py-3">
-                    <a href="" class="btnCheckout">CHECK OUT</a>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
@@ -277,54 +295,54 @@
 <script src="{{asset('front-end/js/main.js')}}"></script>
 
 <script>
-    $(document).ready(function (){
+    $(document).ready(function () {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-        $(".header-cart").click(function (){
+        $(".header-cart").click(function () {
             $("#exampleModalFullscreen").modal('show');
         })
         $('body').on('click', '.addCart', function () {
             var id = $(this).attr('data-id');
-            $.get("{{route('home.index')}}" + "/cart/" + id +"/add", function (data) {
+            $.get("{{route('home.index')}}" + "/cart/" + id + "/add", function (data) {
                 let cart = data.cart;
                 $('#qtyCart').html(data.qty)
                 $('#CartQty').html(data.qty)
                 $('.modal-body').html(data.cart);
-                $('.total-price').html(data.total+" $")
+                $('.total-price').html(data.total + " $")
                 toastr.success(data.success);
             })
         })
         $('body').on('click', '.add-product', function () {
             var id = $(this).attr('data-id');
-            $.get("{{route('home.index')}}" + "/cart/" + id +"/add", function (data) {
+            $.get("{{route('home.index')}}" + "/cart/" + id + "/add", function (data) {
                 console.log(data.qty)
                 let cart = data.cart;
                 $('#qtyCart').html(data.qty)
                 $('#CartQty').html(data.qty)
                 $('.modal-body').html(data.cart);
-                $('.total-price').html(data.total+" $")
+                $('.total-price').html(data.total + " $")
                 toastr.success(data.success);
             })
         })
-        $('body').on('click','.descrease-product',function (){
+        $('body').on('click', '.descrease-product', function () {
             var id = $(this).attr('data-id');
-            $.get("{{route('home.index')}}" + "/cart/" + id +"/decrease", function (data) {
+            $.get("{{route('home.index')}}" + "/cart/" + id + "/decrease", function (data) {
                 console.log(data.qty)
                 let cart = data.cart;
                 $('#qtyCart').html(data.qty)
                 $('#CartQty').html(data.qty)
                 $('.modal-body').html(data.cart);
-                $('.total-price').html(data.total+" $")
+                $('.total-price').html(data.total + " $")
                 toastr.success(data.success);
             })
         })
-        $('body').on('click','.remove-product',function (){
+        $('body').on('click', '.remove-product', function () {
             var id = $(this).attr('data-id');
             console.log(id)
-            $.get("{{route('home.index')}}" + "/cart/" + id +"/remove", function (data) {
+            $.get("{{route('home.index')}}" + "/cart/" + id + "/remove", function (data) {
                 console.log(data.qty)
                 let cart = data.cart;
                 console.log(data.success)
@@ -332,7 +350,7 @@
                 $('#qtyCart').html(data.qty)
                 $('#CartQty').html(data.qty)
                 $('.modal-body').html(data.cart);
-                $('.total-price').html(data.total+" $")
+                $('.total-price').html(data.total + " $")
 
             })
         })

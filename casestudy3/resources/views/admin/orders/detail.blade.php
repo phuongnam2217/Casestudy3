@@ -9,11 +9,8 @@
                         </i>
                     </div>
                     <div>
-                        <h2><a class="" href="{{route('products.index')}}">Products List</a></h2>
+                        <h2><a class="" href="{{route('products.index')}}">Order Details</a></h2>
                         <div class="page-title-subheading">
-                            <a href="{{route('products.create')}}" id="createCategory"
-                               class="btn btn-success btn-lg fsize-2">Create
-                                New Products</a>
                         </div>
                     </div>
                 </div>
@@ -72,62 +69,115 @@
                 </div>
             </div>
         </div>
+        <div class="row py-5">
+            <div class="col-6">
+               <div class="card">
+                   <div class="card-body">
+                       <h2 class="text-center">Order Information</h2>
+                       <p>Order Code :  {{$order->id}}</p>
+                       <p>Note : {{$order->note}}</p>
+                       <p>Status :  <span class="badge {{$order->status == 1 ? "badge-secondary" : "badge-success"}} ">
+                                              {{$order->status == 1 ? "Waiting" : "Confirmed"}}
+                                        </span></p>
+                   </div>
+               </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center">Thông tin khách hàng</h2>
+                        <p>Họ và tên : {{$order->customer->name}}</p>
+                        <p>Email : {{$order->customer->email}}</p>
+                        <p>Số điện thoại : {{$order->customer->phone}}</p>
+                        <p>Địa chỉ giao hàng : {{$order->customer->address}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+{{--        <div class="row">--}}
+{{--            <div class="col-lg-12">--}}
+{{--                <div class="main-card mb-3 card">--}}
+{{--                    <div class="card-body"><h5 class="card-title text-center">Information Customer</h5>--}}
+{{--                        <table class="mb-0 table">--}}
+{{--                            <thead>--}}
+{{--                            <tr>--}}
+{{--                                <th>Customer Id</th>--}}
+{{--                                <th>Name</th>--}}
+{{--                                <th>Address</th>--}}
+{{--                                <th>Email</th>--}}
+{{--                                <th>Phone</th>--}}
+{{--                            </tr>--}}
+{{--                            </thead>--}}
+{{--                            <tbody>--}}
+{{--                                <tr>--}}
+{{--                                    <td>{{$order->customer->id}}</td>--}}
+{{--                                    <td>--}}
+{{--                                        {{$order->customer->name}}--}}
+{{--                                    </td>--}}
+{{--                                    <td>{{$order->customer->address}}</td>--}}
+{{--                                    <td>{{$order->customer->email}}</td>--}}
+{{--                                    <td>--}}
+{{--                                        {{$order->customer->phone}}--}}
+{{--                                    </td>--}}
+{{--                                </tr>--}}
+{{--                            </tbody>--}}
+{{--                        </table>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <div class="row">
             <div class="col-lg-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-body"><h5 class="card-title">Simple table</h5>
-                        <table class="mb-0 table" id="table-product">
+                    <div class="card-body"><h5 class="card-title text-center">Infomation Order</h5>
+                        <table class="mb-0 table table-bordered" id="table-product">
                             <thead>
                             <tr>
-                                <th>No</th>
-                                <th style="width: 300px">Name</th>
-                                <th>Category</th>
-{{--                                <th>Material</th>--}}
-{{--                                <th>Plating</th>--}}
-                                <th>Description & Image</th>
-                                <th>Status</th>
-                                <th>Price</th>
-                                <th>Stock</th>
-                                <th>Action</th>
+                                <th>Product ID</th>
+                                <th>Name</th>
+                                <th>Image</th>
+                                <th>Quantity</th>
+                                <th>PriceEach</th>
+                                <th>Total</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($products as $product)
+                            @foreach($order->products as $item)
                                 <tr>
-                                    <td>{{$product->id}}</td>
+                                    <td>{{$item->id}}</td>
+                                    <td><img width="100px" src="{{asset('images/'.$item->images[0]->image)}}" alt=""></td>
                                     <td>
-                                        {{$product->name}}
+                                        {{$item->name}}
                                     </td>
-                                    <td>{{$product->category->name}}</td>
-{{--                                    <td>{{$product->material->name}}</td>--}}
-{{--                                    <td>{{$product->plating->name}}</td>--}}
+                                    <td>{{$item->pivot->quantity}}</td>
+                                    <td>{{$item->price}} $</td>
                                     <td>
-                                        <div class="row justify-content-lg-around">
-                                            <button value="" data-id="{{ $product->description }}" id="" class="btn btn-info showDescription">
-                                                Des
-                                            </button>
-                                            <a href="{{route('products.image',$product->id)}}" class="btn btn-secondary">Images</a>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <a href="{{route('products.changeStatus',$product->id)}}" class="badge {{$product->status == \App\Models\StatusConstant::ACTIVE ? "badge-success" : "badge-secondary"}}">
-                                            {{$product->status == \App\Models\StatusConstant::ACTIVE ? "ACTIVE" : "DISABLE"}}
-                                        </a>
-                                    </td>
-                                    <td>{{$product->price}}$</td>
-                                    <td>{{$product->stock}}</td>
-                                    <td>
-                                        <div class="row justify-content-around">
-                                            <a href="{{route('products.edit',$product->id)}}" class="edit btn btn-primary">
-                                                <i style="font-size: 20px" class="me0tismenu-icon pe-7s-edit"></i></a>
-                                            <button value="{{route('products.destroy',$product->id)}}" class="btn btn-danger deleteProduct">
-                                                <i style="font-size: 20px" class="metismenu-icon pe-7s-trash"></i></button>
-                                        </div>
+                                        {{$item->pivot->total}} $
                                     </td>
                                 </tr>
                             @endforeach
                             </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td colspan="2">Total Order: {{$total}} $</td>
+                                </tr>
+                            </tfoot>
                         </table>
+                    </div>
+                </div>
+                <div class="position-relative row justify-content-center">
+                    <div class="col-sm-4">
+                        <a href="{{route('orders.index',$order->status)}}" class="btn btn-secondary form-control">Back</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="{{route('orders.print',$order->id)}}" class="btn btn-success form-control">Print</a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="{{route('orders.confirmed',$order->id)}}" class="btn btn-primary form-control">Confirmed</a>
                     </div>
                 </div>
             </div>

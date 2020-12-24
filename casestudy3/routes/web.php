@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BraceletsController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CheckOutController;
+use App\Http\Controllers\EarringsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NeckLacesController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RingsController;
 use App\Http\Controllers\UserController;
@@ -26,6 +30,12 @@ use Illuminate\Support\Facades\Route;
 //});
 Route::get('/',[HomeController::class,'index'])->name('home.index');
 Route::get('/{id}/product',[HomeController::class,'detailProduct'])->name('home.detailProduct');
+Route::post('/search',[HomeController::class,'search'])->name('home.search');
+Route::middleware('checkCart')->prefix('/checkout')->group(function (){
+    Route::get('/',[CheckOutController::class,'checkout'])->name('checkout.index');
+    Route::post('/',[CheckOutController::class,'createOrder'])->name('checkout.createOrder');
+});
+
 //Necklaces
 Route::prefix('necklaces')->group(function (){
     Route::get('/',[NeckLacesController::class,'index'])->name('necklaces.index');
@@ -35,8 +45,17 @@ Route::prefix('necklaces')->group(function (){
 //Rings
 Route::prefix('rings')->group(function (){
     Route::get('/',[RingsController::class,'index'])->name('rings.index');
-//    Route::get('/sort/{sort}/{order}',[RingsController::class,'sort'])->name('rings.sort');
     Route::get('/sort/{sort}/{order}/{value?}',[RingsController::class,'sortPagination'])->name('rings.sortPagination');
+});
+//Earrings
+Route::prefix('earrings')->group(function (){
+    Route::get('/',[EarringsController::class,'index'])->name('earrings.index');
+    Route::get('/sort/{sort}/{order}/{value?}',[EarringsController::class,'sortPagination'])->name('earrings.sortPagination');
+});
+//Bracelets & Bangles
+Route::prefix('bracelets-bangles')->group(function (){
+    Route::get('/',[BraceletsController::class,'index'])->name('bracelets-bangles.index');
+    Route::get('/sort/{sort}/{order}/{value?}',[BraceletsController::class,'sortPagination'])->name('bracelets-bangles.sortPagination');
 });
 
 Route::prefix('cart')->group(function (){
@@ -62,7 +81,7 @@ Route::middleware(['auth','checkAccount'])->prefix('admin')->group(function (){
         Route::get('/{id}/status',[UserController::class,'changeStatus'])->name('users.changeStatus');
         Route::post('/{id}/update',[UserController::class,'update'])->name('users.update');
     });
-//Category
+    //Category
     Route::prefix('/categories')->group(function (){
         Route::get('/',[CategoryController::class,'index'])->name('categories.index');
         Route::post('/store',[CategoryController::class,'store'])->name('categories.store');
@@ -83,6 +102,15 @@ Route::middleware(['auth','checkAccount'])->prefix('admin')->group(function (){
         Route::get('/{id}/image',[ProductController::class,'image'])->name('products.image');
         Route::post('/{id}/upload',[ProductController::class,'upload'])->name('products.upload');
         Route::get('/{id}/{image_id}/remove',[ProductController::class,'removeImage'])->name('products.removeImage');
+        Route::get('/{id}/changeStatus',[ProductController::class,'changeStatus'])->name('products.changeStatus');
+    });
+
+//    Order & Order Details
+    Route::prefix('/orders')->group(function (){
+        Route::get('/{id}',[OrderController::class,'index'])->name('orders.index');
+        Route::get('/{id}/show',[OrderController::class,'show'])->name('orders.show');
+        Route::get('/{id}/print_order',[OrderController::class,'print_order'])->name('orders.print');
+        Route::get('/{id}/confirmed',[OrderController::class,'confirmed'])->name('orders.confirmed');
     });
 });
 

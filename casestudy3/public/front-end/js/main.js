@@ -18,6 +18,9 @@ $(document).ready(function (){
         $("#quantityBtn").val(value);
     })
 
+    $('.search-icon').click(function (){
+       $('.form-search').toggle()
+    });
 })
 const navSlide = () => {
     const burger = document.querySelector('.burger');

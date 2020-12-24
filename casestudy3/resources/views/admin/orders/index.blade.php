@@ -9,11 +9,9 @@
                         </i>
                     </div>
                     <div>
-                        <h2><a class="" href="{{route('products.index')}}">Products List</a></h2>
+                        <h2><a class="" href="{{route('products.index')}}">Order List</a></h2>
                         <div class="page-title-subheading">
-                            <a href="{{route('products.create')}}" id="createCategory"
-                               class="btn btn-success btn-lg fsize-2">Create
-                                New Products</a>
+
                         </div>
                     </div>
                 </div>
@@ -79,48 +77,35 @@
                         <table class="mb-0 table" id="table-product">
                             <thead>
                             <tr>
-                                <th>No</th>
-                                <th style="width: 300px">Name</th>
-                                <th>Category</th>
-{{--                                <th>Material</th>--}}
-{{--                                <th>Plating</th>--}}
-                                <th>Description & Image</th>
+                                <th>Order ID</th>
+                                <th>Customer Name</th>
+                                <th>Note</th>
                                 <th>Status</th>
-                                <th>Price</th>
-                                <th>Stock</th>
+                                <th>Create_At</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($products as $product)
+                            @foreach($orders as $order)
                                 <tr>
-                                    <td>{{$product->id}}</td>
+                                    <td>{{$order->id}}</td>
                                     <td>
-                                        {{$product->name}}
-                                    </td>
-                                    <td>{{$product->category->name}}</td>
-{{--                                    <td>{{$product->material->name}}</td>--}}
-{{--                                    <td>{{$product->plating->name}}</td>--}}
-                                    <td>
-                                        <div class="row justify-content-lg-around">
-                                            <button value="" data-id="{{ $product->description }}" id="" class="btn btn-info showDescription">
-                                                Des
-                                            </button>
-                                            <a href="{{route('products.image',$product->id)}}" class="btn btn-secondary">Images</a>
-                                        </div>
+                                        {{$order->customer->name}}
                                     </td>
                                     <td>
-                                        <a href="{{route('products.changeStatus',$product->id)}}" class="badge {{$product->status == \App\Models\StatusConstant::ACTIVE ? "badge-success" : "badge-secondary"}}">
-                                            {{$product->status == \App\Models\StatusConstant::ACTIVE ? "ACTIVE" : "DISABLE"}}
-                                        </a>
+                                        {{$order->note}}
                                     </td>
-                                    <td>{{$product->price}}$</td>
-                                    <td>{{$product->stock}}</td>
+                                    <td>
+                                        <span class="badge {{$order->status == 1 ? "badge-secondary" : "badge-success"}} ">
+                                              {{$order->status == 1 ? "Waiting" : "Confirmed"}}
+                                        </span>
+                                    </td>
+                                    <td>{{$order->created_at}}</td>
                                     <td>
                                         <div class="row justify-content-around">
-                                            <a href="{{route('products.edit',$product->id)}}" class="edit btn btn-primary">
+                                            <a href="{{route('orders.show',$order->id)}}" class="edit btn btn-primary">
                                                 <i style="font-size: 20px" class="me0tismenu-icon pe-7s-edit"></i></a>
-                                            <button value="{{route('products.destroy',$product->id)}}" class="btn btn-danger deleteProduct">
+                                            <button value="" class="btn btn-danger deleteProduct">
                                                 <i style="font-size: 20px" class="metismenu-icon pe-7s-trash"></i></button>
                                         </div>
                                     </td>
