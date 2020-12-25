@@ -42,6 +42,7 @@ class CheckOutController extends Controller
                 'total'=>$total
             ]);
         };
-        return back()->with('success',"You ordered successfully");
+        session()->forget('cart');
+        return  redirect()->route('home.index')->with('success',"You ordered successfully");
     }
 }

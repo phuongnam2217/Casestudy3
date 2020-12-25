@@ -51,7 +51,7 @@
                         <textarea name="note" class="form-control" placeholder="Order noter"></textarea>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
-                            Launch demo modal
+                           Place Order
                         </button>
                         <p class="text-muted text-center">Complimentary Shipping & Returns</p>
                         <!-- Button trigger modal -->

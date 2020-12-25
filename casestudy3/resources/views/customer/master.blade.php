@@ -357,11 +357,11 @@
         "hideMethod": "fadeOut"
     }
 </script>
-{{--@if(\Illuminate\Support\Facades\Session::has('success'))--}}
-{{--    <script>--}}
-{{--        toastr.success("{!! Session::get('success') !!}")--}}
-{{--    </script>--}}
-{{--@endif--}}
+@if(\Illuminate\Support\Facades\Session::has('success'))
+    <script>
+        toastr.success("{!! Session::get('success') !!}")
+    </script>
+@endif
 @yield('js')
 
 </body>

@@ -481,7 +481,9 @@ a.animation2:hover::after {
     color: white;
 }
 
-
+.toast-top-right{
+    top: 20%!important;
+}
 
 @media screen and (min-width: 357px){
 
