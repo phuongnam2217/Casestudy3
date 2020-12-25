@@ -2,7 +2,7 @@
 @section('title',$product->name)
 @section('content')
     <div class="menu">
-        <div class="banner-details">
+        <div class="banner-details" style="background-image: url('{{asset('front-end/images/backgrond-p.jpg')}}')">
             <h1 id="title-page">{{$product->name}} | 925 {{$product->material->name}} |
                 18K {{$product->plating->name}}</h1>
         </div>
@@ -117,10 +117,8 @@
                     dataType: 'json',
                     success : function (data){
                         $('#qtyCart').html(data.qty)
-                        $('#CartQty').html(data.qty)
-                        $('.modal-body').html(data.cart);
-                        $('.total-price').html(data.total+" $")
-                        toastr.success(data.success)
+                        toastr.success(data.success);
+                        $('.modal-content').html(data.cart);
                     }
                 })
             })

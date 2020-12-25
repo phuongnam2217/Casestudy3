@@ -5,6 +5,7 @@ use App\Http\Controllers\BraceletsController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CheckOutController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EarringsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NeckLacesController;
@@ -111,6 +112,12 @@ Route::middleware(['auth','checkAccount'])->prefix('admin')->group(function (){
         Route::get('/{id}/show',[OrderController::class,'show'])->name('orders.show');
         Route::get('/{id}/print_order',[OrderController::class,'print_order'])->name('orders.print');
         Route::get('/{id}/confirmed',[OrderController::class,'confirmed'])->name('orders.confirmed');
+        Route::get('/{id}/cancel',[OrderController::class,'cancelOrder'])->name('orders.cancel');
+    });
+
+//    Customers
+    Route::prefix('/customers')->group(function (){
+        Route::get('/',[CustomerController::class,'index'])->name('customers.index');
     });
 });
 

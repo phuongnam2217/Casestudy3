@@ -82,7 +82,7 @@
                 <div class="col-6 col-md-3">
                     <div class="cart">
                         <div class="cart-body">
-                            <a href="">
+                            <a href="{{route('necklaces.index')}}">
                                 @foreach($necklace->images as $key => $image)
                                     <img width="100%" src="{{asset('images/'.$image->image)}}" alt="">
                                     @break(0)
@@ -90,49 +90,49 @@
                             </a>
                         </div>
                         <b>
-                            <a href="" class="animation2" tabindex="-1">Shop Necklaces &gt;</a>
+                            <a href="{{route('necklaces.index')}}" class="animation2" tabindex="-1">Shop Necklaces &gt;</a>
                         </b>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                    <div class="cart">
                        <div class="cart-body">
-                           <a href="">
+                           <a href="{{route('earrings.index')}}">
                                @foreach($earring->images as $key => $image)
                                    <img width="100%" src="{{asset('images/'.$image->image)}}" alt="">
                                    @break(0)
                                @endforeach
                            </a>
                        </div>
-                       <b><a href=""
+                       <b><a href="{{{route('earrings.index')}}}"
                              class="animation2" tabindex="-1">Shop Earrings &gt;</a></b>
                    </div>
                </div>
                 <div class="col-6 col-md-3">
                     <div class="cart">
                         <div class="cart-body">
-                            <a href="">
+                            <a href="{{route('rings.index')}}">
                                 @foreach($ring->images as $key => $image)
                                     <img width="100%" src="{{asset('images/'.$image->image)}}" alt="">
                                     @break(0)
                                 @endforeach
                             </a>
                         </div>
-                        <b><a href=""
+                        <b><a href="{{route('rings.index')}}"
                               class="animation2" tabindex="-1">Shop Rings &gt;</a></b>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="cart">
                         <div class="cart-body">
-                            <a href="">
+                            <a href="{{route('bracelets-bangles.index')}}">
                                 @foreach($braceletsAndBangles->images as $key => $image)
                                     <img width="100%" src="{{asset('images/'.$image->image)}}" alt="">
                                     @break(0)
                                 @endforeach
                             </a>
                         </div>
-                        <b><a href=""
+                        <b><a href="{{route('bracelets-bangles.index')}}"
                               class="animation2" tabindex="-1">Shop Bacelets & Bangles &gt;</a></b>
                     </div>
                 </div>
@@ -174,8 +174,6 @@
                 loop: true,
                 margin: 10,
                 dots: false,
-                // pagination:true,
-                // navigationText:true,
                 autoplay: true,
                 animateOut: 'fadeOut',
                 autoplayTimeout: 3000,

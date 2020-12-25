@@ -24022,6 +24022,6 @@ a.fc-more:hover {
     background-size: 100%
 }
 .table.dataTable tbody th, table.dataTable tbody td{
-    padding: 4px 8px;
-    text-align: center;
+    /*padding: 4px 8px;*/
+    /*text-align: center;*/
 }

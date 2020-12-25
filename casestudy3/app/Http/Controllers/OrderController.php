@@ -28,17 +28,39 @@ class OrderController extends Controller
     public function confirmed($id)
     {
         $order =  $order = Order::findOrFail($id);
-        $order->status = 2;
-        foreach ($order->products as $item)
+        if($order->status == StatusOrderConst::WAITING){
+            $order->status = StatusOrderConst::SHIPPING;
+            foreach ($order->products as $item)
+            {
+                $product = Product::findOrFail($item->id);
+                $product->stock -= $item->pivot->quantity;
+                $product->save();
+            }
+            $order->save();
+            return back()->with('success',"This order status shipping");
+        }elseif ($order->status == StatusOrderConst::SHIPPING)
         {
-            $product = Product::findOrFail($item->id);
-            $product->stock -= $item->pivot->quantity;
-            $product->save();
+            $order->status = StatusOrderConst::SUCCESS;
+            $order->save();
+            return back()->with('success',"This order status success");
         }
-        $order->save();
-        return back()->with('success',"Order confirmed successfully");
     }
 
+    public function cancelOrder($id)
+    {
+        $order =  $order = Order::findOrFail($id);
+        if($order->status == StatusOrderConst::SHIPPING){
+            foreach ($order->products as $item)
+            {
+                $product = Product::findOrFail($item->id);
+                $product->stock += $item->pivot->quantity;
+                $product->save();
+            }
+        }
+        $order->status = StatusOrderConst::CANCEL;
+        $order->save();
+        return back()->with('success','This order status cancel');
+    }
 
     public function print_order($id)
     {

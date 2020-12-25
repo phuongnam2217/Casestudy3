@@ -2,7 +2,7 @@
 @section('title',"Auroses Bracelets & Bangles")
 @section('content')
     <div class="menu">
-        <div class="banner-details">
+        <div class="banner-details" style="background-image: url('{{asset('front-end/images/backgrond-p.jpg')}}')">
             <h1 id="title-page">NECKLACES</h1>
         </div>
         <div class="patern">

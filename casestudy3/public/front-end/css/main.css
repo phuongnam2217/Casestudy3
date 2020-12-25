@@ -69,6 +69,7 @@ header {
 
 .modal-content {
     width: 50%;
+    box-shadow: 5px 5px 68px #100d0d;
 }
 @media screen and (max-width: 768px){
     .modal-content {

@@ -11,7 +11,6 @@ class HomeController extends Controller
     {
         $products = Product::where('status','1')->orderBy('id','desc')->take(10)->get();
         $bestSeller = Product::where('status','1')->orderBy('sold','desc')->take(10)->get();
-
         $necklace = Product::where('category_id',2)->orderBy('created_at','desc')->first();
         $earring = Product::where('category_id',3)->orderBy('created_at','desc')->first();
         $ring = Product::where('category_id',4)->orderBy('created_at','desc')->first();

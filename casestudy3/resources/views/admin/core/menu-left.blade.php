@@ -83,20 +83,46 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{route('orders.index',1)}}">
+                            <a href="{{route('orders.index',\App\Http\Controllers\StatusOrderConst::WAITING)}}">
                                 <i class="metismenu-icon"></i>
                                 Orders Waiting
                             </a>
                         </li>
                         <li>
-                            <a href="{{route('orders.index',2)}}">
+                            <a href="{{route('orders.index',\App\Http\Controllers\StatusOrderConst::SHIPPING)}}">
                                 <i class="metismenu-icon">
-                                </i>Orders Confirmed
+                                </i>Orders Shipping
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('orders.index',\App\Http\Controllers\StatusOrderConst::SUCCESS)}}">
+                                <i class="metismenu-icon">
+                                </i>Orders Success
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('orders.index',\App\Http\Controllers\StatusOrderConst::CANCEL)}}">
+                                <i class="metismenu-icon">
+                                </i>Orders Cancel
                             </a>
                         </li>
                     </ul>
                 </li>
-
+                <li>
+                    <a href="#">
+                        <i class="metismenu-icon pe-7s-users"></i>
+                        Manage Product
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{route('customers.index')}}">
+                                <i class="metismenu-icon"></i>
+                                Customers List
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

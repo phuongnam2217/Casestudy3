@@ -69,6 +69,20 @@
                     </div>
                 </div>
             </div>
+            <div class="position-relative row justify-content-center pt-3">
+                <div class="col-sm-3">
+                    <a href="{{route('orders.index',\App\Http\Controllers\StatusOrderConst::WAITING)}}" class="btn btn-secondary form-control">Order Waiting</a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="{{route('orders.index',\App\Http\Controllers\StatusOrderConst::SHIPPING)}}" class="btn btn-success form-control">Order Shipping</a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="{{route('orders.index',\App\Http\Controllers\StatusOrderConst::SUCCESS)}}" class="btn btn-primary form-control">Order Success</a>
+                </div>
+                <div class="col-sm-3">
+                    <a href="{{route('orders.index',\App\Http\Controllers\StatusOrderConst::CANCEL)}}" class="btn btn-danger form-control">Order Cancel</a>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -96,8 +110,8 @@
                                         {{$order->note}}
                                     </td>
                                     <td>
-                                        <span class="badge {{$order->status == 1 ? "badge-secondary" : "badge-success"}} ">
-                                              {{$order->status == 1 ? "Waiting" : "Confirmed"}}
+                                        <span class="badge {{$order->statusBadge()}} ">
+                                              {{$order->status()}}
                                         </span>
                                     </td>
                                     <td>{{$order->created_at}}</td>
@@ -105,7 +119,7 @@
                                         <div class="row justify-content-around">
                                             <a href="{{route('orders.show',$order->id)}}" class="edit btn btn-primary">
                                                 <i style="font-size: 20px" class="me0tismenu-icon pe-7s-edit"></i></a>
-                                            <button value="" class="btn btn-danger deleteProduct">
+                                            <button value="{{route('orders.cancel',$order->id)}}" class="btn btn-danger deleteProduct">
                                                 <i style="font-size: 20px" class="metismenu-icon pe-7s-trash"></i></button>
                                         </div>
                                     </td>

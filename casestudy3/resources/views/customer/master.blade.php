@@ -200,7 +200,7 @@
 <div class="modal fade" id="exampleModalFullscreen" tabindex="-1" aria-labelledby="exampleModalFullscreenLabel"0
      style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content">
+        <div id="modal-content" class="modal-content">
             <div class="modal-header">
                 <button type="button" class="btn-close my-btn" data-bs-dismiss="modal" aria-label="Close">
                 </button>
@@ -273,7 +273,6 @@
                     </div>
                 @endif
             </div>
-
         </div>
     </div>
 </div>
@@ -307,53 +306,38 @@
         $('body').on('click', '.addCart', function () {
             var id = $(this).attr('data-id');
             $.get("{{route('home.index')}}" + "/cart/" + id + "/add", function (data) {
-                let cart = data.cart;
                 $('#qtyCart').html(data.qty)
-                $('#CartQty').html(data.qty)
-                $('.modal-body').html(data.cart);
-                $('.total-price').html(data.total + " $")
                 toastr.success(data.success);
+                $('.modal-content').html(data.cart);
             })
         })
         $('body').on('click', '.add-product', function () {
             var id = $(this).attr('data-id');
             $.get("{{route('home.index')}}" + "/cart/" + id + "/add", function (data) {
-                console.log(data.qty)
-                let cart = data.cart;
                 $('#qtyCart').html(data.qty)
-                $('#CartQty').html(data.qty)
-                $('.modal-body').html(data.cart);
-                $('.total-price').html(data.total + " $")
-                toastr.success(data.success);
+                // toastr.success(data.success);
+                $('.modal-content').html(data.cart);
             })
         })
         $('body').on('click', '.descrease-product', function () {
             var id = $(this).attr('data-id');
             $.get("{{route('home.index')}}" + "/cart/" + id + "/decrease", function (data) {
-                console.log(data.qty)
                 let cart = data.cart;
                 $('#qtyCart').html(data.qty)
-                $('#CartQty').html(data.qty)
-                $('.modal-body').html(data.cart);
-                $('.total-price').html(data.total + " $")
-                toastr.success(data.success);
+                // toastr.success(data.success);
+                $('.modal-content').html('').append(data.cart);
             })
         })
         $('body').on('click', '.remove-product', function () {
             var id = $(this).attr('data-id');
-            console.log(id)
             $.get("{{route('home.index')}}" + "/cart/" + id + "/remove", function (data) {
-                console.log(data.qty)
-                let cart = data.cart;
-                console.log(data.success)
-                toastr.success(data.success);
                 $('#qtyCart').html(data.qty)
-                $('#CartQty').html(data.qty)
-                $('.modal-body').html(data.cart);
-                $('.total-price').html(data.total + " $")
-
+                // toastr.success(data.success);
+                $('.modal-content').html('').append(data.cart);
             })
         })
+
+
     })
     toastr.options = {
         "closeButton": true,
